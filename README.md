@@ -1,2 +1,3 @@
-# Kyrene-Home
-Like you,like me!
+# Ionic3.0.0
+graduation design
+theme:share reading
