@@ -1,0 +1,25 @@
+<ion-header no-border>
+  <ion-toolbar>    
+  	<ion-buttons left>  
+      <button ion-button (click)="dismiss()">   
+        <ion-icon name="arrow-back"></ion-icon>  
+      </button>  
+    </ion-buttons>  
+    <ion-title>隐私</ion-title>  
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content style="background-color: #ccc">
+  <ion-item style="margin-top: 2rem;">
+	  <ion-label> 关注我时需要验证</ion-label>
+	  <ion-toggle color="secondary" checked="false"></ion-toggle>
+  </ion-item>
+  <ion-item style="margin-top: 2rem;">
+	  <ion-label> 向我推荐消息</ion-label>
+	  <ion-toggle color="secondary" checked="false"></ion-toggle>
+  </ion-item>
+  <ion-item style="margin-top: 2rem;">
+	  <ion-label> 不让别人看我的动态</ion-label>
+	  <ion-toggle color="secondary" checked="false"></ion-toggle>
+  </ion-item>
+</ion-content>

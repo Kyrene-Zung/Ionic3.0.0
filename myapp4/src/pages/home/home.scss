@@ -1,0 +1,40 @@
+page-home {
+		.homeHeader.item-md.item-block .item-inner{
+			border-bottom:none;
+		}
+		#home .button-md{
+			padding:0px;
+		}
+		.toolbar-content{
+		width: 200px;
+    	margin-top: 5px;
+    	margin-left: 20px;
+    	float: left;
+		}
+		.item-md{
+			padding-left:0;
+			border-bottom: 0.55px solid #c8c7cc;
+		}
+		ion-label {
+		    display: block;
+		    overflow: hidden;
+		    -webkit-flex: 1;
+		    -ms-flex: 1;
+		    flex: 1;
+		    margin: 0;
+		    font-size: inherit;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		}
+		.list-md {
+    		margin: 0;
+		}
+		ion-icon {
+		    display: inline-block;
+		    font-size: 1.6em;
+		    color: #777171;
+		}
+		.button-ios{
+			height:1.7rem;
+		}
+}

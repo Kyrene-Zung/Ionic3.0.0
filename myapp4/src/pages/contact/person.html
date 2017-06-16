@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="title">
+      个人信息
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="text-align: center;background-color:rgba(145, 144, 144, 0.76);">
+	<ion-list>
+      <ion-item>
+        <ion-label item-left>头像</ion-label>
+        <ion-avatar item-right (click)="changeImg()"><img src="assets/images/{{personal.headImg ||'defalult.jpg'}}" ></ion-avatar>
+      </ion-item>
+      <ion-item (click)="changeName()">
+        <ion-label item-left>用户名</ion-label>  <ion-label item-right>{{personal.username}}</ion-label>
+      </ion-item>
+      <ion-item (click)="changeSex()">
+        <ion-label item-left>性别</ion-label>  <ion-label item-right>{{personal.gender}}</ion-label>
+
+        <!-- <ion-label  item-left>性别</ion-label>
+        <ion-select [(ngModel)]="gender" style="padding:0px;">
+          <ion-option value="m">男</ion-option>
+          <ion-option value="f">女</ion-option>
+        </ion-select> -->
+      </ion-item>
+      <ion-item (click)="changeNUm()">
+        <ion-label item-left>手机号码</ion-label><ion-label item-right>{{personal.phoneNum}}</ion-label>
+      </ion-item>
+      <ion-item (click)="changeEmail()">
+        <ion-label item-left>邮件地址</ion-label><ion-label item-right>{{personal.email}}</ion-label>
+      </ion-item>
+  </ion-list>
+  <ion-list>
+      <ion-item>
+         <ion-list-header>个性签名</ion-list-header>
+         <ion-item  (click)="changeSignature()">{{personal.signature}}</ion-item>
+      </ion-item>
+  </ion-list>
+</ion-content>

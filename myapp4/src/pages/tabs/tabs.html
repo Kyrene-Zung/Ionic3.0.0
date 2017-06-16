@@ -1,0 +1,10 @@
+<ion-tabs #mainTab>
+  <ion-tab [root]="tab1Root" tabTitle="动态" tabIcon="ios-chatbubbles-outline"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="朋友" tabIcon="ios-contacts-outline" ></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="个人中心" tabIcon="star-outline" isActive="false"></ion-tab >
+</ion-tabs>
+
+<!-- @Kyrene 20170417 20:46 add tabBadge tabBadgeStyle -->
+<!-- selectedIndex默认选中 -->
+<!-- [root]="tab1Root"  is the page you want to load for that tab 在.ts文件 -->
+<!-- ionic有自家的后台管理环境（https://apps.ionic.io） -->

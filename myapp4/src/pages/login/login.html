@@ -1,0 +1,50 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-title class="title" transparent>
+      登录
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="height:100%;position: relative;">
+   <ion-slides autoplay="5000"  speed="1500" effect="fade" id="slidesHeight" style="min-height:640px;">
+     <ion-slide  *ngFor="let background of backgrounds" [ngStyle]="{'background-image':'url('+ background +')'}" style="background-size: cover;height: 100%;">
+     </ion-slide>
+   </ion-slides>
+
+   <div class="login-container" id="login_container" style="margin-left:-101px;margin-top:-123.5px;">
+      <!-- <ion-list transparent>
+        <ion-item class="login">
+          <ion-input type="text" placeholder="用户名" value="" [(ngModel)]="user.username" id="username"></ion-input>
+        </ion-item>
+        <ion-item class="login">
+          <ion-input type="password" placeholder="密码" value="" id="code"></ion-input>
+        </ion-item>
+      </ion-list> -->
+      <ion-list>
+
+          <ion-item style="border-bottom: 1px solid #ccc">
+            <ion-label floating>Username</ion-label>
+            <ion-input type="text" id="username" [(ngModel)]="user.username"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" id="code" [(ngModel)]="user.code"></ion-input>
+          </ion-item>
+
+      </ion-list>
+
+      <button ion-button block (click)="judgeLoading()">登录</button>
+<!--       <button ion-button block (click)="out()">退出</button>
+ -->
+      <ion-row>
+        <ion-col>
+          <div class="textAlignRight marginTop10" >
+            <button ion-button outline small (click)="openRegisterPage()">还没有账号？点击注册</button>
+          </div>
+        </ion-col>
+      </ion-row>
+   </div>
+
+</ion-content>

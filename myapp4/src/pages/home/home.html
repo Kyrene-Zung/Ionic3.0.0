@@ -1,0 +1,158 @@
+
+<ion-header>
+  <ion-navbar > <!-- [root]="rootPage" -->
+    <ion-item style="background: transparent;border: none;" class="homeHeader">
+      <ion-avatar item-left>
+        <img src="assets/images/{{user.headImg || 'default.jpg'}}" id="homeImg">
+      </ion-avatar>
+      <span>{{user.signature || '添加个性签名'}}</span>
+    </ion-item>
+
+      <!-- <div class="toolbar-content toolbar-content-ios" >
+
+              <ion-segment color="white" class="segment segment-ios  ng-valid ng-touched ng-dirty">
+                <ion-segment-button class="segment-button segment-activated" role="button" tappable="" value="featured" aria-pressed="true"><font><font>
+                    消息
+                    </font></font>
+                    <div class="button-effect"></div>
+                </ion-segment-button>
+                <ion-segment-button class="segment-button" role="button" tappable="" value="recent" aria-pressed="false"><font><font>
+                    电话
+                    </font></font><div class="button-effect"></div>
+                </ion-segment-button>
+              </ion-segment>
+      </div>  -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content style="background: url(assets/images/bg1.jpg);" id="home">
+<ion-refresher (ionRefresh)="doRefresh($event)">  </ion-refresher>
+  <!-- Card -->
+  <ion-card *ngFor="let systems of system">
+    <!-- <ion-item>
+        <ion-avatar item-left>
+          <img src="../assets/images/{{systems.headImg}}">
+        </ion-avatar>
+        <h2>{{systems.username}}</h2>
+        <p>来自 {{systems.equipment}}</p>
+    </ion-item> -->
+
+    <div class="item item-image">
+      <img src="assets/images/{{systems.image||'card1.jpg'}}" style="padding:5px;">
+    </div>
+
+
+    <ion-row style="border-bottom: 1px solid #ccc;">
+      <!-- 点赞 -->
+      <ion-col col-1 *ngIf="systems.color1">
+        <button ion-button clear ng-model="systems.id" (click)="praise($event,systems.id)" >
+           <ion-icon name="ios-thumbs-up-outline" style="color:red"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-1 *ngIf="!systems.color1">
+        <button ion-button clear ng-model="systems.id" (click)="praise($event,systems.id)" >
+           <ion-icon name="ios-thumbs-up-outline" style="color:#000"></ion-icon>
+        </button>
+      </ion-col>
+      <!-- 评论 -->
+      <ion-col col-1>
+        <button ion-button clear>
+           <ion-icon name="ios-create-outline"></ion-icon>
+        </button>
+      </ion-col>
+      <!-- 分享 -->
+      <ion-col col-1>
+        <button ion-button clear>
+           <ion-icon name="ios-paper-plane-outline"></ion-icon>
+        </button>
+      </ion-col>
+      <!-- 收藏 -->
+      <ion-col col-1 *ngIf="systems.color">
+        <button ion-button clear  ng-model="systems.id"  (click)="collection($event,systems.id)" style="padding:0;">
+           <ion-icon name="ios-heart-outline" style="color:red"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-1 *ngIf="!systems.color">
+        <button ion-button clear  ng-model="systems.id"  (click)="collection($event,systems.id)" style="padding:0;">
+           <ion-icon name="ios-heart-outline" style="color:#000"></ion-icon>
+        </button>
+      </ion-col>
+      <!-- 时间 -->
+      <ion-col col-8 style="text-align: right;margin: auto">
+          <ion-note item-right>
+           {{systems.time}}
+        </ion-note>
+      </ion-col>
+    </ion-row>
+    <!-- 下一行 -->
+    <ion-row>
+      <ion-col col-1>
+        <ion-icon name="thumbs-up" item-left style="font-size: 1.6rem;margin: 2px 0 0 10px;color: #777171;"></ion-icon>
+      </ion-col>
+      <ion-col col-11>
+        <div><span>{{systems.praiseTimes||0}}</span>赞</div>
+      </ion-col>
+    </ion-row>
+
+    <ion-card-content>
+        <p style="font-size: 1.6rem;color: #171616 ;">{{systems.content}}</p>
+    </ion-card-content>
+    <!-- <div style="margin: 0 0 0 10px;">全部<span>{{systems.commandTimes}}</span>条评论</div> -->
+  </ion-card>
+
+ <!--  <ion-card>
+    <ion-item>
+        <ion-avatar item-left>
+          <img src="../images/me2.jpg">
+        </ion-avatar>
+        <h2>Kyrene</h2>
+        <p>来自 iPhone 6s</p>
+    </ion-item>
+
+    <div class="item item-image">
+      <img src="../assets/images/card1.jpg" >
+    </div>
+
+
+    <ion-row style="border-bottom: 1px solid #ccc;">
+      <ion-col col-1>
+        <button ion-button clear>
+           <ion-icon name="ios-thumbs-up-outline"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-1>
+        <button ion-button clear>
+           <ion-icon name="ios-create-outline"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-1>
+        <button ion-button clear>
+           <ion-icon name="ios-paper-plane-outline"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-1>
+        <button ion-button clear>
+           <ion-icon name="ios-heart-outline"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-8 style="text-align: right;margin: auto">
+          <ion-note item-right>
+           1小时前
+        </ion-note>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-1>
+        <ion-icon name="thumbs-up" item-left style="font-size: 1.6rem;margin: 2px 0 0 10px;color: #777171;"></ion-icon>
+      </ion-col>
+      <ion-col col-11>
+        <div><span>113</span>赞</div>
+      </ion-col>
+    </ion-row>
+
+    <ion-card-content>
+        <p style="font-size: 1.6rem;color: #171616 ;">遇上一本好书，叹一杯清茶!</p>
+    </ion-card-content>
+    <div style="margin: 0 0 0 10px;">全部<span>166</span>条评论</div>
+  </ion-card> -->
+</ion-content>

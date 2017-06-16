@@ -1,0 +1,9 @@
+page-expressbook{
+	.list-ios > .item-block:first-child {
+    	border-left: 0.55px solid #c8c7cc;
+    	border-right: 0.55px solid #c8c7cc;
+	}
+	.input-has-focus{
+		pointer-events:none;
+	}
+}

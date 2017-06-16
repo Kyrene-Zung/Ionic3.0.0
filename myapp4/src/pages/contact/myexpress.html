@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="title">
+      我的发表
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content  overflow-scroll="true" style="background: url(assets/images/bg12.jpg)no-repeat;background-size: cover">
+	<!-- <ion-row>
+    <ion-col col-2><img src="../assets/images/1.png"></ion-col>
+    <ion-col>个性签名</ion-col>
+  </ion-row> -->
+  <ion-refresher (ionRefresh)="doRefresh($event)">  </ion-refresher>
+  <!-- 显示我的发表 -->
+  <ion-row *ngFor='let expressItem of express'>
+    <ion-col col-3 style="font-size: 2.0rem;">{{expressItem.month}}月{{expressItem.date}}</ion-col>
+    <ion-col>
+      <ion-card style="box-shadow: 1px 1px 3px #000;">
+
+          <div class="item item-image">
+            <img src="assets/images/{{expressItem.expressImg ||card1.jpg}}" >
+          </div>
+
+          <!-- <ion-row style="border-bottom: 1px solid #ccc;">
+            <ion-col col-1>
+              <button ion-button clear>
+                 <ion-icon name="ios-thumbs-up-outline"></ion-icon>
+              </button>
+            </ion-col>
+            <ion-col col-1>
+              <button ion-button clear>
+                 <ion-icon name="ios-create-outline"></ion-icon>
+              </button>
+            </ion-col>
+            <ion-col col-1>
+              <button ion-button clear>
+                 <ion-icon name="ios-paper-plane-outline"></ion-icon>
+              </button>
+            </ion-col>
+            <ion-col col-1>
+              <button ion-button clear>
+                 <ion-icon name="ios-heart-outline"></ion-icon>
+              </button>
+            </ion-col>
+            <ion-col col-8 style="text-align: right;margin: auto">
+                <ion-note item-right>
+                 1小时前
+              </ion-note>
+            </ion-col>
+          </ion-row> -->
+          <ion-row>
+            <ion-col col-1>
+              <ion-icon name="thumbs-up" item-left style="font-size: 1.6rem;color: #777171;"></ion-icon>
+            </ion-col>
+            <ion-col col-11>
+              <div><span>{{expressItem.praiseTimes||0}}</span>赞</div>
+            </ion-col>
+          </ion-row>
+
+          <ion-card-content>
+              <p style="font-size: 1.6rem;color: #171616 ;">{{expressItem.expressText}}</p>
+          </ion-card-content>
+          <div style="margin: 0 0 0 10px;" (click)="myCommand($event,expressItem)">全部<span>{{expressItem.commandTimes||0}}</span>条评论</div>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>

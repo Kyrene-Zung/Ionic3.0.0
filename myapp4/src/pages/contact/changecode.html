@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="title">
+      修改密码
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content  overflow-scroll="true" padding>
+	<ion-list>
+	  <ion-item>
+	    <ion-label color="primary">密码</ion-label>
+	    <ion-input placeholder="" type="password" id="Code"></ion-input>
+
+	  </ion-item>
+
+	  <ion-item>
+	    <ion-label color="primary" fixed>确认密码</ion-label>
+	    <ion-input type="tel" placeholder="" type="password" id="sureCode"></ion-input>
+	  </ion-item>
+	</ion-list>
+    <ion-label >{{err.codeErr}}</ion-label >
+	<button ion-button block (click)="finish()">完成</button>
+</ion-content>

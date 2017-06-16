@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="title">
+      发表图书
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content  overflow-scroll="true" padding style="background: url(assets/images/bg7.jpg)no-repeat;background-size: cover">
+	<ion-list>
+	  <ion-item>
+	   <ion-textarea rows="15" id="expressText"></ion-textarea>
+	  </ion-item>
+	  <button ion-button color="dark" outline><ion-icon name="add"></ion-icon>上传图片</button>
+	</ion-list>
+	<button ion-button block (click)="express()">发表</button>
+</ion-content>

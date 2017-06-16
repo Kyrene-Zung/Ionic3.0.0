@@ -1,0 +1,69 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons left>
+      <button ion-button (click)="dismiss()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>我的收藏</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-color: #2b2929;" id="mycollection">
+  <ion-refresher (ionRefresh)="doRefresh($event)">  </ion-refresher>
+  <ion-card *ngFor="let collections of collection">
+    <!-- <ion-item>
+        <ion-avatar item-left>
+          <img src="../assets/images/{{systems.headImg}}">
+        </ion-avatar>
+        <h2>{{systems.username}}</h2>
+        <p>来自 {{systems.equipment}}</p>
+    </ion-item> -->
+
+    <div class="item item-image">
+      <img src="assets/images/{{collections.image}}" style="padding:5px;">
+    </div>
+
+
+    <ion-row style="border-bottom: 1px solid #ccc;">
+      <!-- <ion-col col-1>
+        <button ion-button clear>
+           <ion-icon name="ios-thumbs-up-outline"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-1>
+        <button ion-button clear>
+           <ion-icon name="ios-create-outline"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-1>
+        <button ion-button clear>
+           <ion-icon name="ios-paper-plane-outline"></ion-icon>
+        </button>
+      </ion-col> -->
+      <ion-col col-1 *ngIf="collections.color">
+        <button ion-button clear  ng-model="collections.id"  (click)="cancleCollect($event,collections.id)" style="padding:0;">
+           <ion-icon name="ios-heart-outline" style="color:red"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-8 style="text-align: right;margin: auto">
+          <ion-note item-right>
+           {{collections.time}}
+        </ion-note>
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row>
+      <ion-col col-1>
+        <ion-icon name="thumbs-up" item-left style="font-size: 1.6rem;margin: 2px 0 0 10px;color: #777171;"></ion-icon>
+      </ion-col>
+      <ion-col col-11>
+        <div><span>{{collections.pointTimes}}</span>赞</div>
+      </ion-col>
+    </ion-row> -->
+
+    <ion-card-content>
+        <p style="font-size: 1.6rem;color: #171616 ;">{{collections.content}}</p>
+    </ion-card-content>
+    <!-- <div style="margin: 0 0 0 10px;">全部<span>{{collections.commandTimes}}</span>条评论</div> -->
+  </ion-card>
+</ion-content>

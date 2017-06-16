@@ -1,0 +1,46 @@
+<ion-header no-border>
+  <ion-toolbar>   
+  	<ion-buttons left>  
+      <button ion-button (click)="dismiss()">   
+        <ion-icon name="arrow-back"></ion-icon>  
+      </button>  
+    </ion-buttons>  
+    <ion-title>通用</ion-title>  
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content style="background-color: #ccc">
+  <ion-item style="margin-top: 2rem;">
+	  <ion-label> 开启横屏模式</ion-label>
+	  <ion-toggle color="secondary" checked="false"></ion-toggle>
+  </ion-item>
+  <ion-item>
+	  <ion-label>自动下载安装包</ion-label>
+	  <ion-select [(ngModel)]="gender">
+	    <ion-option value="f">仅Wi-f网络</ion-option>
+	    <ion-option value="m">从不</ion-option>
+	  </ion-select>
+  </ion-item>
+  <ion-list>
+	  <ion-item>
+	    <ion-label>语言</ion-label>
+	    <ion-select [(ngModel)]="gaming">
+	      <ion-option value="nes">NES</ion-option>
+	      <ion-option value="n64">Nintendo64</ion-option>
+	      <ion-option value="ps">PlayStation</ion-option>
+	      <ion-option value="genesis">Sega Genesis</ion-option>
+	      <ion-option value="saturn">Sega Saturn</ion-option>
+	      <ion-option value="snes">SNES</ion-option>
+	    </ion-select>
+	  </ion-item>
+	</ion-list>
+	 <ion-item>
+		  <ion-label>字体大小</ion-label>
+		  <ion-select [(ngModel)]="fontsize">
+		    <ion-option value="f">10px</ion-option>
+		    <ion-option value="m">20px</ion-option>
+		  </ion-select>
+  	</ion-item>
+	<ion-item>流量统计</ion-item>
+	<ion-item>清除myapp存储空间</ion-item>
+</ion-content>

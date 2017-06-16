@@ -1,0 +1,64 @@
+ <ion-header>
+  	<ion-navbar>
+		<ion-title>
+			{{item.contactname}}
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">  </ion-refresher>
+	<!-- {{item.contacttext}} -->
+	<ion-row>
+		<ion-col col-2><img src="assets/images/{{item.headImg||'default.jpg'}}"></ion-col>
+		<ion-col>{{item.username}}</ion-col>
+	</ion-row>
+
+  <!-- 显示动态 -->
+	<ion-row *ngFor='let concern of concernUser'>
+		<ion-col col-3 style="font-size: 2.0rem;">{{concern.month}}月{{concern.date}}</ion-col>
+		<ion-col>
+			<ion-card style="box-shadow: 1px 1px 3px #000;">
+
+			    <div class="item item-image">
+			      <img src="assets/images/{{concern.expressImg || 'card1.jpg'}}" >
+			    </div>
+
+			    <ion-row style="border-bottom: 1px solid #ccc;">
+            <!-- 点赞 -->
+			      <ion-col col-3 style="text-align: center;" *ngIf="concern.color">
+			        <button ion-button clear ng-model="concern.id" (click)="praise($event,concern.id)">
+			           <ion-icon name="ios-thumbs-up-outline" style="color:red"></ion-icon>
+			        </button>
+			      </ion-col>
+            <ion-col col-3 style="text-align: center;" *ngIf="!concern.color">
+			        <button ion-button clear ng-model="concern.id" (click)="praise($event,concern.id)">
+			           <ion-icon name="ios-thumbs-up-outline" style="color:#000"></ion-icon>
+			        </button>
+			      </ion-col>
+            <!-- 评论 -->
+			      <ion-col col-3>
+			        <button ion-button clear>
+			           <!-- <ion-icon name="ios-create-outline" ng-model="concern.id" (click)="command($event,concern.id)"></ion-icon> -->
+                 <ion-icon name="ios-create-outline" (click)="command($event,concern)"></ion-icon>
+
+			        </button>
+			      </ion-col>
+			    </ion-row>
+			    <ion-row>
+			      <ion-col col-1>
+			        <ion-icon name="thumbs-up" item-left style="font-size: 1.6rem;color: #777171;"></ion-icon>
+			      </ion-col>
+			      <ion-col col-11>
+			        <div><span>{{concern.praiseTimes||0}}</span>赞</div>
+			      </ion-col>
+			    </ion-row>
+
+			    <ion-card-content>
+			        <p style="font-size: 1.6rem;color: #171616 ;">{{concern.expressText}}</p>
+			    </ion-card-content>
+			    <div style="margin: 0 0 0 10px;">全部<span>{{concern.commandTimes||0}}</span>条评论</div>
+ 			</ion-card>
+		</ion-col>
+	</ion-row>
+</ion-content>

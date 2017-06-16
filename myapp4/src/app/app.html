@@ -1,0 +1,36 @@
+<ion-menu [content]="content">
+
+  <ion-content style="background: url(assets/images/bg13.jpg);background-size: cover;" id="personalbg">
+      <ion-item style="background: transparent;margin-top: 15%;">
+        <ion-avatar item-left>
+            <img src="assets/images/{{user.headImg || 'default.jpg'}}" id="slideImg">
+        </ion-avatar>
+        <h1 id="slideUser">{{user.username}}</h1>
+      </ion-item>
+        <ion-item style="background: transparent;"> <span id="slideNature">{{user.signature || '添加个性签名'}}</span>
+      </ion-item>
+
+      <ion-list inset style="margin:16px 0;">
+        <button ion-item  (click)="knowAbout()" style="background: transparent;">
+          <ion-icon name="ios-ionitron-outline" style="padding-right: 5px;"></ion-icon>了解app
+        </button>
+        <button ion-item  (click)="myCollection()" style="background: transparent;">
+          <ion-icon name="ios-heart-outline" style="padding-right: 5px;"></ion-icon>我的收藏
+        </button>
+        <button ion-item  (click)="presonal()" style="background: transparent;">
+          <ion-icon name="ios-color-palette-outline" style="padding-right: 5px;"></ion-icon>个性化
+        </button>
+        <button ion-item  (click)="setting()" style="background: transparent;">
+          <ion-icon name="ios-settings-outline" style="padding-right: 5px;"></ion-icon>设置
+        </button>
+      </ion-list>
+
+      <ion-item style="background: transparent;margin-top: 15%;">
+        <h1 style="color: #fff;">28<sup>o</sup></h1>
+        <h4>广州</h4>
+      </ion-item>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

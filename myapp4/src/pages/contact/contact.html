@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="title">
+      个人中心
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background: url(assets/images/bg10.jpg);background-size: cover;">
+
+	<!-- <ion-list>
+		<button ion-item>
+			 <ion-icon name="md-navigate"></ion-icon> 书店
+		</button>
+	</ion-list>    -->
+
+	 <ion-list>
+	  <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+	    <ion-icon name="{{ item.icon }}" color="{{item.color}}"></ion-icon> {{ item.name }}
+	  </button>
+	</ion-list>
+
+	<ion-list>
+		<button ion-item (click)="bookstore()">
+			 <ion-icon name="md-navigate"></ion-icon> 附近
+		</button>
+	</ion-list>
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header>
+   <ion-navbar>
+   <ion-title>
+     {{item.id}}
+     {{item.username}}
+     {{item.expressText}}
+
+   </ion-title>
+ </ion-navbar>
+</ion-header>
+
+<ion-content  overflow-scroll="true" padding style="background: url(assets/images/bg7.jpg)no-repeat;background-size: cover">
+
+  <ion-list>
+	  <ion-item>
+	   <ion-textarea rows="10" id="commandText"></ion-textarea>
+	  </ion-item>
+	</ion-list>
+	<button ion-button block ng-model="item.username" (click)="command()">提交</button>
+<!-- 评论列表 -->
+  <ion-refresher (ionRefresh)="doRefresh($event)">  </ion-refresher>
+    <ion-list style="border-bottom:0px;">
+       <ion-item-sliding *ngFor="let commands of commandList"  style="border-bottom: 1px solid #ccc;border-radius: 5px; margin-bottom: 10px;">
+          <ion-item>
+            <ion-row>
+               <ion-col item-left><h2 style="margin:0;font-weight:bold">{{commands.userCommand}}</h2></ion-col>
+               <ion-col item-right><p>{{commands.time}}</p></ion-col>
+            </ion-row>
+             <h3>{{commands.commandText}}</h3>
+           </ion-item>
+           <ion-item-options side="right">
+             <button ion-button color="danger" ng-model="commands" (click)="cancleCommand($event,commands)">
+                <ion-icon name="trash"></ion-icon>
+                   删除评论
+             </button>
+           </ion-item-options>
+       </ion-item-sliding>
+    </ion-list>
+</ion-content>

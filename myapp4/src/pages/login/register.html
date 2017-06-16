@@ -1,0 +1,35 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-title class="title">
+      用户注册
+    </ion-title>
+    <!-- <ion-buttons right color="primary" icon-only >  
+	    <button (click)="dismiss()" style="background-color: #488aff">  
+	      <span style="font-size: 14px;color:#fff;">取消</span>   -->
+	      <!-- <ion-icon name="md-close" showWhen="android,windows"></ion-icon>  --> 
+	    <!-- </button>  
+  	</ion-buttons>   -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="text-align: center;background-color:rgba(145, 144, 144, 0.76);" id="register">
+  <ion-icon name="ios-contact-outline" isActive style="width:190px;font-size: 17rem;color: #fff"></ion-icon>
+	<ion-list>
+      <ion-item>
+        <ion-label stacked>用户名</ion-label>
+        <ion-input type="text" value="" id="user"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>密码</ion-label>
+        <ion-input type="password" value="" id="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>确认密码</ion-label>
+        <ion-input type="password" value="" id="passwordSure"></ion-input>
+      </ion-item>
+  </ion-list>
+  <!--  @Kyrene 20170422 add 注册页面
+  1.[(ngModel)]="user.username"  2.(click)= -->
+  <button ion-button block (click)="register()">注册</button>
+</ion-content>
+

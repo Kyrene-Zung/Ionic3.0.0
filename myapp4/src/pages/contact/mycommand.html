@@ -1,0 +1,27 @@
+<ion-header>
+   <ion-navbar>
+   <ion-title>
+     {{item.id}}
+   </ion-title>
+ </ion-navbar>
+</ion-header>
+<ion-content  overflow-scroll="true" padding style="background: url(assets/images/bg7.jpg)no-repeat;background-size: cover">
+
+<!-- 评论列表 -->
+  <ion-refresher (ionRefresh)="doRefresh($event)">  </ion-refresher>
+    <ion-list style="border-bottom:0px;">
+          <ion-item *ngFor="let commands of commandList"  style="border-bottom: 1px solid #ccc;border-radius: 5px; margin-bottom: 10px;">
+            <ion-row>
+               <ion-col item-left><h2 style="margin:0;font-weight:bold">{{commands.userCommand}}</h2></ion-col>
+               <ion-col item-right><p>{{commands.time}}</p></ion-col>
+            </ion-row>
+             <h3>{{commands.commandText}}</h3>
+           </ion-item>
+           <!-- <ion-item-options side="right">
+             <button ion-button color="danger" ng-model="commands" (click)="cancleCommand($event,commands)">
+                <ion-icon name="trash"></ion-icon>
+                   删除评论
+             </button>
+           </ion-item-options> -->
+    </ion-list>
+</ion-content>

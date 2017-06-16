@@ -1,0 +1,29 @@
+<ion-header no-border>
+  <ion-toolbar>  
+    <ion-buttons left>  
+      <button ion-button (click)="dismiss()">   
+        <ion-icon name="arrow-back"></ion-icon>  
+      </button>  
+    </ion-buttons>  
+    <ion-title>新消息提醒</ion-title>  
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content style="background-color:#ccc">
+  <ion-item style="margin-top: 2rem;">
+	  <ion-label> 接受新动态提醒</ion-label>
+	  <ion-toggle color="secondary" checked="false"></ion-toggle>
+  </ion-item>
+  <ion-item>
+	  <ion-label> 通知被关注提醒</ion-label>
+	  <ion-toggle color="secondary" checked="false"></ion-toggle>
+  </ion-item>
+  <ion-item style="margin-top: 2rem;">
+	  <ion-label> 声音</ion-label>
+	  <ion-toggle color="secondary" checked="false"></ion-toggle>
+  </ion-item>
+  <ion-item>
+	  <ion-label> 振动</ion-label>
+	  <ion-toggle color="secondary" checked="false"></ion-toggle>
+  </ion-item>
+</ion-content>

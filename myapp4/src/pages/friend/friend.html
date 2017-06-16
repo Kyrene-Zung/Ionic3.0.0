@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title class="title">
+      我的关注
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background:url(assets/images/bg8.jpg);">
+	<!-- <ion-list> -->
+	<!-- 动态绑定数据 -->
+<!-- 	  <ion-item *ngFor="let contact of contacts" (click)="itemClick($event,contact)" --><!-- > --><!-- 绑定事件，传参：全局自身的event -->
+	   <!--  <ion-avatar item-left>
+	      <img src="../images/{{contact.contactid}}.png">
+	    </ion-avatar>
+	    <h2>{{contact.contactname}}</h2>
+	    <p>{{contact.contacttext}}</p>
+	  </ion-item>
+	</ion-list> -->
+
+<ion-refresher (ionRefresh)="doRefresh($event)">  </ion-refresher>
+	 <ion-list style="border-bottom:0px;">
+      <ion-item-sliding *ngFor="let friends of friend" (click)="itemClick($event,friends)" style="border-bottom: 1px solid #ccc;border-radius: 5px; margin-bottom: 10px;">
+          <ion-item>
+            <ion-avatar item-left>
+                <img src="assets/images/{{friends.headImg||'default.jpg'}}">
+            </ion-avatar>
+            <h2 style="margin:0">{{friends.username}}</h2>
+            <p>{{friends.signature}}</p>
+          </ion-item>
+          <ion-item-options side="right">
+            <button ion-button color="danger" ng-model="friends.username" (click)="cancleConcern($event,friends.username)">
+               <ion-icon name="trash"></ion-icon>
+                  取消关注
+            </button>
+          </ion-item-options>
+      </ion-item-sliding>
+  </ion-list>
+</ion-content>

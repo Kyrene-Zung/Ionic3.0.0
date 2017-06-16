@@ -1,0 +1,18 @@
+<ion-header no-border>
+  <ion-toolbar>   
+  	<ion-buttons left>  
+      <button ion-button (click)="dismiss()">   
+        <ion-icon name="arrow-back"></ion-icon>  
+      </button>  
+    </ion-buttons>  
+    <ion-title>勿扰模式</ion-title>  
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content style="background-color: #ccc">
+  <ion-item style="margin-top: 2rem;">
+	  <ion-label> 勿扰模式</ion-label>
+	  <ion-toggle color="secondary" checked="false"></ion-toggle>
+	  <p>开启后，接收到新消息时不会响铃或振动</p>
+  </ion-item>
+</ion-content>

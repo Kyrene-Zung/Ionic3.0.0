@@ -1,0 +1,34 @@
+page-login {
+	.login-container{
+		position:absolute;
+		top:50%;
+		left:44%;
+		z-index:5;
+	}
+	.list-ios > .item-block:first-child {
+    	border-top: none;
+	}
+	.item-ios{
+		background-color:transparent;
+	}
+	.item-md{
+		background-color:transparent;
+	}
+
+	.page-login .ionItem{
+		border:none;
+	}
+	.login{
+		border:none;
+	}
+	.login .item-inner{
+		border:none;
+	}
+	.login .item-inner .input-wrapper{
+		border:none;
+	}
+	.login .item-inner .input-wrapper#username{
+		border:none;
+	}
+
+}

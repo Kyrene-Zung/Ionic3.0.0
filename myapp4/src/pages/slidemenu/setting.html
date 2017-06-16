@@ -1,0 +1,36 @@
+<ion-header no-border>
+  <ion-toolbar>  
+    <ion-buttons left>  
+      <button ion-button (click)="dismiss()">   
+        <ion-icon name="arrow-back"></ion-icon>  
+      </button>  
+    </ion-buttons>  
+    <ion-title>设置</ion-title>  
+  </ion-toolbar>  
+</ion-header>
+
+<ion-content style="background-color: #ccc">
+  <ion-list style="margin-top: 2rem;">
+	  <button ion-item (click)="newsremind()">
+	   新消息提醒
+	  </button>  
+	  <button ion-item (click)="dnd()">
+	   勿扰模式
+	  </button>
+	  <button ion-item (click)="privacy()">
+	   隐私
+	  </button>  
+	  <button ion-item (click)="regular()">
+	   通用
+	  </button>    
+  </ion-list>
+  	  <button ion-item (click)="about()">
+	   关于
+	  </button>
+	  <button ion-item (click)="quit()">
+	   退出
+	  </button>
+  <ion-list>
+
+  </ion-list>
+</ion-content>
